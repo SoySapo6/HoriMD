@@ -33,18 +33,22 @@ const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 
 let { say } = cfonts
 console.log(chalk.magentaBright('\n❀ Iniciando...'))
-say('Yuki Suou', {
-font: 'simple',
-align: 'left',
-gradient: ['green', 'white']
+say('HoriMD', {
+font: 'BLOCK',
+align: 'center',
+gradient: ['pink', 'orange']
 })
-say('Made with love by Destroy', {
+say('Hecho por SoyMaycol', {
 font: 'console',
 align: 'center',
 colors: ['cyan', 'magenta', 'yellow']
 })
 protoType()
 serialize()
+
+if (!existsSync("./tmp")) {
+  mkdirSync("./tmp");
+}
 
 global.__filename = function filename(pathURL = import.meta.url, rmPrefix = platform !== 'win32') {
 return rmPrefix ? /file:\/\/\//.test(pathURL) ? fileURLToPath(pathURL) : pathURL : pathToFileURL(pathURL).toString()
